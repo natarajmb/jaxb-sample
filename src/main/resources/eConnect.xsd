@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="AddressLine">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="PostCode">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="AdditionalData">
+        <xs:sequence>
+            <xs:element name="FieldName" type="xs:string"/>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="AttributeName" type="xs:string"/>
+                <xs:element name="AttributeValue" type="xs:string"/>
+            </xs:sequence>
+            <xs:element name="FieldValue" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContactDetails">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Phone" type="xs:string"/>
+            <xs:element name="EMail" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LineEntry">
+        <xs:sequence>
+            <xs:element name="LineNum" type="xs:string"/>
+            <xs:element name="BuyerProductCode" type="xs:string"/>
+            <xs:element name="BuyerDescription" type="xs:string"/>
+            <xs:element name="SupplierProductCode" type="xs:string"/>
+            <xs:element name="SupplierDescription" type="xs:string"/>
+            <xs:element name="EAN" type="xs:string"/>
+            <xs:element name="UnitCode" type="xs:string"/>
+            <xs:element name="UnitDescription" type="xs:string"/>
+            <xs:element name="UnitPriceExc" type="xs:string"/>
+            <xs:element name="UnitVAT" type="xs:string"/>
+            <xs:element name="UnitPriceInc" type="xs:string"/>
+            <xs:element name="Qty" type="xs:string"/>
+            <xs:element name="LinePriceExc" type="xs:string"/>
+            <xs:element name="LineVAT" type="xs:string"/>
+            <xs:element name="LinePriceInc" type="xs:string"/>
+            <xs:element name="AdditionalData" type="AdditionalData"
+                        minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

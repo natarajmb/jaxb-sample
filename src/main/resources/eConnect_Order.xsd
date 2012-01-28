@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="eConnect.xsd"/>
+
+    <!-- START TYPE DEFINITIONS -->
+    <xs:complexType name="OrderHeader">
+        <xs:sequence>
+            <xs:element name="OrderType" type="xs:string"/>
+            <xs:element name="OrderNum" type="xs:string"/>
+            <xs:element name="OrderDate" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderBuyer">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="VATRegNo" type="xs:string"/>
+            <xs:element name="BillingAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="BillingAddressPostCode" type="PostCode"/>
+            <xs:element name="ShippingAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="ShippingAddressPostCode" type="PostCode"/>
+            <xs:element name="Contact" type="ContactDetails"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderSupplier">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="VATRegNo" type="xs:string"/>
+            <xs:element name="SupplierAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="SupplierAddressPostCode" type="PostCode"/>
+            <xs:element name="Contact" type="ContactDetails"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderBody">
+        <xs:sequence>
+            <xs:element name="NumberOfLines" type="xs:string"/>
+            <xs:element name="OrderLine" type="LineEntry" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OrderSummary">
+        <xs:sequence>
+            <xs:element name="OrderTotalExc" type="xs:string"/>
+            <xs:element name="OrderTotalVAT" type="xs:string"/>
+            <xs:element name="OrderTotalInc" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- END TYPE DEFINITIONS -->
+
+    <xs:element name="Orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Order" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Header" type="OrderHeader"/>
+                            <xs:element name="Buyer" type="OrderBuyer"/>
+                            <xs:element name="Supplier" type="OrderSupplier"/>
+                            <xs:element name="Body" type="OrderBody"/>
+                            <xs:element name="Summary" type="OrderSummary"/>
+                            <xs:element name="AdditionalData" type="AdditionalData"
+                                        minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

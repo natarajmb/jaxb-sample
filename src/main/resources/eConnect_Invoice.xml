@@ -1,0 +1,74 @@
+<Invoices>
+    <Invoice>
+        <Header>
+            <InvoiceType>1</InvoiceType>
+            <InvoiceNumber>XV000002991</InvoiceNumber>
+            <InvoiceDate>2008-09-30T19:15:06.43</InvoiceDate>
+            <InvoiceDueDate>2008-11-01T00:00:00.00</InvoiceDueDate>
+            <TaxPoint>2008-11-01</TaxPoint>
+            <OrderNum>Contract001</OrderNum>
+            <DeliveryDate>2008-10-07T00:00:00.00</DeliveryDate>
+            <!--1 or more repetitions:-->
+            <ShippingAddress>Royal Derby Hospital Uttoxeter Road</ShippingAddress>
+            <ShippingAddress>Derby</ShippingAddress>
+            <ShippingAddress>United Kingdom</ShippingAddress>
+            <ShippingAddressPostCode>DE22 3NE</ShippingAddressPostCode>
+        </Header>
+        <Buyer>
+            <Name>Derby Hospitals NHS Foundation Trust</Name>
+            <ID>derby hospitals nhs foundation trust</ID>
+            <VATRegNo>XQ1278392</VATRegNo>
+            <!--1 or more repetitions:-->
+            <BillingAddress>Royal Derby Hospital Uttoxeter Road</BillingAddress>
+            <BillingAddress>Derby</BillingAddress>
+            <BillingAddress>United Kingdom</BillingAddress>
+            <BillingAddressPostCode>DE22 3NE</BillingAddressPostCode>
+            <Contact>
+                <Name>Steve Sandwich</Name>
+                <Phone>0118 9571313</Phone>
+                <EMail>steve.sandwich@rdhu.co.uk</EMail>
+            </Contact>
+        </Buyer>
+        <Supplier>
+            <Name>NATA SEA PLASTICS LTD</Name>
+            <ID>NSP001</ID>
+            <VATRegNo>UY6278919</VATRegNo>
+            <!--1 or more repetitions:-->
+            <SupplierAddress>UNIT 2 5 CAMPSIE ROAD KIRKINTILLOCH</SupplierAddress>
+            <SupplierAddress>GLASGOW</SupplierAddress>
+            <SupplierAddress>United Kingdom</SupplierAddress>
+            <SupplierAddressPostCode>G66 1SL</SupplierAddressPostCode>
+            <Contact>
+                <Name>Big Al Shaker</Name>
+                <Phone>0141 7767900</Phone>
+                <EMail>bas@northsea.co.uk</EMail>
+            </Contact>
+        </Supplier>
+        <Body>
+            <NumberOfLines>1</NumberOfLines>
+            <!--1 or more repetitions:-->
+            <InvoiceLine>
+                <LineNum>string</LineNum>
+                <BuyerProductCode>LDP4.5N</BuyerProductCode>
+                <BuyerDescription>Natural LD Polyprop 2440x1220x4.5mm(PLEASE CUT ALL SHEETS IN HALF)</BuyerDescription>
+                <SupplierProductCode>LDP4.5N</SupplierProductCode>
+                <SupplierDescription>Natural LD Polyprop 2440x1220x4.5mm</SupplierDescription>
+                <EAN>5050278390112</EAN>
+                <UnitCode>290</UnitCode>
+                <UnitDescription>~Per Sheet</UnitDescription>
+                <UnitPriceExc>46.90</UnitPriceExc>
+                <UnitVAT>0.00</UnitVAT>
+                <UnitPriceInc>46.90</UnitPriceInc>
+                <Qty>1</Qty>
+                <LinePriceExc>46.90</LinePriceExc>
+                <LineVAT>0.00</LineVAT>
+                <LinePriceInc>46.90</LinePriceInc>
+            </InvoiceLine>
+        </Body>
+        <Summary>
+            <InvoiceTotalExc>46.90</InvoiceTotalExc>
+            <InvoiceTotalVAT>0.00</InvoiceTotalVAT>
+            <InvoiceTotalInc>46.90</InvoiceTotalInc>
+        </Summary>
+    </Invoice>
+</Invoices>

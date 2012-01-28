@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="eConnect.xsd"/>
+
+    <!-- START TYPE DEFINITIONS -->
+    <xs:complexType name="InvoiceHeader">
+        <xs:sequence>
+            <xs:element name="InvoiceType" type="xs:string"/>
+            <xs:element name="InvoiceNumber" type="xs:string"/>
+            <xs:element name="InvoiceDate" type="xs:dateTime"/>
+            <xs:element name="InvoiceDueDate" type="xs:dateTime"/>
+            <xs:element name="TaxPoint" type="xs:date"/>
+            <xs:element name="OrderNum" type="xs:string"/>
+            <xs:element name="DeliveryDate" type="xs:dateTime"/>
+            <xs:element name="ShippingAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="ShippingAddressPostCode" type="PostCode"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InvoiceBuyer">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="VATRegNo" type="xs:string"/>
+            <xs:element name="BillingAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="BillingAddressPostCode" type="PostCode"/>
+            <xs:element name="Contact" type="ContactDetails"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InvoiceSupplier">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="VATRegNo" type="xs:string"/>
+            <xs:element name="SupplierAddress" type="AddressLine" maxOccurs="unbounded"/>
+            <xs:element name="SupplierAddressPostCode" type="PostCode"/>
+            <xs:element name="Contact" type="ContactDetails"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InvoiceBody">
+        <xs:sequence>
+            <xs:element name="NumberOfLines" type="xs:string"/>
+            <xs:element name="InvoiceLine" type="LineEntry" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="InvoiceSummary">
+        <xs:sequence>
+            <xs:element name="InvoiceTotalExc" type="xs:string"/>
+            <xs:element name="InvoiceTotalVAT" type="xs:string"/>
+            <xs:element name="InvoiceTotalInc" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- END TYPE DEFINITIONS -->
+
+    <xs:element name="Invoices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Invoice">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Header" type="InvoiceHeader"/>
+                            <xs:element name="Buyer" type="InvoiceBuyer"/>
+                            <xs:element name="Supplier" type="InvoiceSupplier"/>
+                            <xs:element name="Body" type="InvoiceBody"/>
+                            <xs:element name="Summary" type="InvoiceSummary"/>
+                            <xs:element name="AdditionalData" type="AdditionalData"
+                                        minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

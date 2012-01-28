@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <bindings schemaLocation="eConnect_Order.xsd">
+        <!-- Renaming the property name generated in java class -->
+        <bindings node="//xs:complexType[@name='OrderBuyer']//xs:sequence//xs:element[@name='Name']">
+            <property name="buyerName"/>
+        </bindings>
+        <bindings node="//xs:complexType[@name='OrderBuyer']//xs:sequence//xs:element[@name='ID']">
+            <property name="buyerId"/>
+        </bindings>
+        <bindings node="//xs:complexType[@name='OrderBuyer']//xs:sequence//xs:element[@name='Contact']">
+            <property name="buyerContact"/>
+        </bindings>
+        <bindings node="//xs:complexType[@name='OrderSupplier']//xs:sequence//xs:element[@name='Name']">
+            <property name="supplierName"/>
+        </bindings>
+        <bindings node="//xs:complexType[@name='OrderSupplier']//xs:sequence//xs:element[@name='ID']">
+            <property name="supplierId"/>
+        </bindings>
+        <bindings node="//xs:complexType[@name='OrderSupplier']//xs:sequence//xs:element[@name='Contact']">
+            <property name="supplierContact"/>
+        </bindings>
+    </bindings>
+</bindings>
