@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) Cognitivenode 2013. All Rights Reserved.
+  ~
+  ~ No part of this source code or any of its contents may be reproduced, copied,
+  ~ modified or adapted, without the prior written consent of the author,
+  ~ unless otherwise indicated for stand-alone materials.
+  -->
+
 <bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb"
           xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <bindings schemaLocation="eConnect_Order.xsd">
